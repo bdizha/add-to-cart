@@ -1,0 +1,23 @@
+.cart-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-actions button {
+  background-color: #030303;
+  color: #ffffff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.cart-actions button:hover {
+  background-color: #1e1e1e;
+}
+
+.cart-actions button:active {
+  background-color: #030303;
+}

@@ -1,0 +1,33 @@
+<div class="product-list">
+  <div class="product-item" *ngFor="let product of products">
+    <div class="product-image">
+      <img [src]="product.image" alt="Product Image" />
+    </div>
+    <div class="product-info">
+      <h4>{{ product.name }}</h4>
+      <p>Price: {{ product.price }}</p>
+
+      <!-- Add more product details as needed -->
+      <a [routerLink]="['/product', product.type, product.id]">View Details</a>
+
+      <!-- Include the cart-actions component -->
+      <app-cart-actions [product]="product"></app-cart-actions>
+    </div>
+  </div>
+</div>
+
+<div class="pagination">
+  <button
+    [disabled]="currentPage === 1"
+    (click)="onPageChange(currentPage - 1)"
+  >
+    Previous
+  </button>
+  <span>Page {{ currentPage }} of {{ totalPages }}</span>
+  <button
+    [disabled]="currentPage === totalPages"
+    (click)="onPageChange(currentPage + 1)"
+  >
+    Next
+  </button>
+</div>

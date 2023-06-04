@@ -1,0 +1,8 @@
+<div class="cart-actions">
+  <button *ngIf="!(isInCart$ | async)" (click)="addToCart()">
+    Add to Cart
+  </button>
+  <button *ngIf="isInCart$ | async" (click)="removeFromCart()">
+    Remove from Cart
+  </button>
+</div>

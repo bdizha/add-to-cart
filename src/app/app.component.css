@@ -1,0 +1,39 @@
+.container {
+  margin: 0 auto;
+  max-width: 968px;
+}
+.navbar {
+  background-color: #030303;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-list {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  padding: 0 16px;
+}
+
+.nav-item {
+  font-size: 18px;
+}
+
+.nav-item a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.nav-item a:hover {
+  color: #cccccc;
+}
+
+.nav-item a.active {
+  color: #ffcc00;
+}

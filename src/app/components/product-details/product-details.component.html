@@ -1,0 +1,59 @@
+<div class="product-details">
+  <div class="product-image">
+    <img [src]="product.image" alt="Product Image" />
+  </div>
+  <div class="product-info">
+    <h2>{{ product.name }}</h2>
+    <div class="product-attributes">
+      <div>
+        <span class="attribute-label">Model:</span>
+        <span class="attribute-value">{{ product.model }}</span>
+      </div>
+      <div>
+        <span class="attribute-label">Manufacturer:</span>
+        <span class="attribute-value">{{ product.manufacturer }}</span>
+      </div>
+      <div>
+        <span class="attribute-label">Price:</span>
+        <span class="attribute-value">{{ product.price }}</span>
+      </div>
+      <div>
+        <span class="attribute-label">Length:</span>
+        <span class="attribute-value">{{ product.length }}</span>
+      </div>
+      <div>
+        <span class="attribute-label">Crew:</span>
+        <span class="attribute-value">{{ product.crew }}</span>
+      </div>
+      <div>
+        <span class="attribute-label">Passengers:</span>
+        <span class="attribute-value">{{ product.passengers }}</span>
+      </div>
+      <div *ngIf="productType === 'starships'">
+        <div>
+          <span class="attribute-label">Starship Class:</span>
+          <span class="attribute-value">{{ getStarship(product).starship_class }}</span>
+        </div>
+        <div>
+          <span class="attribute-label">Hyperdrive Rating:</span>
+          <span class="attribute-value">{{ getStarship(product).hyperdrive_rating }}</span>
+        </div>
+        <!-- Add more starship-specific attributes here -->
+      </div>
+      <div *ngIf="productType === 'vehicles'">
+        <div>
+          <span class="attribute-label">Vehicle Class:</span>
+          <span class="attribute-value">{{ getVehicle(product).vehicle_class }}</span>
+        </div>
+        <div>
+          <span class="attribute-label">Max Atmosphering Speed:</span>
+          <span class="attribute-value">{{ getVehicle(product).max_atmosphering_speed }}</span>
+        </div>
+        <!-- Add more vehicle-specific attributes here -->
+      </div>
+
+      <!-- Include the cart-actions component -->
+      <app-cart-actions [product]="product"></app-cart-actions>
+    </div>
+  </div>
+</div>
